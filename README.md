@@ -1,4 +1,4 @@
-# Virtual Machine (VM), Container, Docker, Kubernete, Cluster, Nodes, Master Node, Worker Nodes, POD, Kubernete Service, and Replication Controller or ReplicaSet
+# Virtual Machine (VM), Container, Docker, Kubernete, Cluster, Nodes, Master Node, Worker Nodes, POD, Kubernete Service, Replication Controller or ReplicaSet and Auto Scaling
 
 #### Virtual Machine (VM): 
 VM is a kind of a virtual server that you can connect remotely. VM containes whole Operating Systems with all its libraries like any other physical machine that make it heavy in GB in size.
@@ -62,3 +62,9 @@ Kubernete service is a logical set/group of PODs which provides a single IP addr
 Replication Controller or ReplicaSet is another key feature of Kubernetes. It is the component responsible for actually managing the pod lifecycle – starting pods when instructed by the service or if pods go offline or are accidentally stopped, and also killing pods if the service instructs to do so, perhaps because of decreased user load. 
 
 So in other words, the replication controller helps achieve our desired state regarding the specified number of running pods.
+
+#### Auto Scaling
+We can use Docker container directly for our purpose but we instead of using it directly we use it through Kubernete because Kubernetes has ability to autoscale the application based demands/workload. Autoscaling is achieved by setting up the cluster to increase the number of nodes when service demand increases, and also reduce the number of nodes when demand decreases.
+
+#### Note
+Keep in mind that nodes are "physically" exist which means that our cloud platform must allow the Kubernetes engine to create new machines.
