@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - name: avcon-kubernete-node-simple
-        image: ghcr.io/amalay/av-dockerhub-sample:latest #path to your docker image
+        image: ghcr.io/amalay/av-dockerhub-sample:latest #path to your docker image Ex. Docker hub path or Github container registry path or local path where image exist.
         ports:
         - containerPort: 3000
 ---
