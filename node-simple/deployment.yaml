@@ -1,0 +1,38 @@
+# We can define "app deployment" and "service deployment" scripts in two seperate files (Ex. "deployment-app.yaml" and "deployment-service.yaml") or
+# We can also merge both scripts in single file (Ex. "deployment.yaml") as below:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+  labels:
+    app: node-simple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-simple
+  template:
+    metadata:
+      labels:
+        app: node-simple 
+    spec:
+      containers:
+      - name: avcon-kubernete-node-simple
+        image: ghcr.io/amalay/av-dockerhub-sample:latest #path to your docker image
+        ports:
+        - containerPort: 3000
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-service
+spec:
+  selector:
+    app: node-simple
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+    nodePort: 31110

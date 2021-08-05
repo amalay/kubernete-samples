@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment
+  labels:
+    app: node-simple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-simple
+  template:
+    metadata:
+      labels:
+        app: node-simple 
+    spec:
+      containers:
+      - name: avcon-kubernete-node-simple
+        image: ghcr.io/amalay/av-dockerhub-sample:latest #path to your docker image
+        ports:
+        - containerPort: 3000
