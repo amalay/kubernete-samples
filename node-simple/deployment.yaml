@@ -4,32 +4,32 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: node-app-deployment
+  name: node-app-deployment # You can give any name.
   labels:
-    app: node-simple
+    app: node-simple  # You can give any name
 spec:
-  replicas: 1
+  replicas: 1 # How many instance do you want to replicate for this app on Kubernete cluster? Ex. 1 or 2 or 3 and so on.
   selector:
     matchLabels:
-      app: node-simple
+      app: node-simple  # You can give any name
   template:
     metadata:
       labels:
-        app: node-simple 
+        app: node-simple  # You can give any name
     spec:
       containers:
-      - name: avcon-kubernete-node-simple
+      - name: avcon-kubernete-node-simple # You can give any name
         image: ghcr.io/amalay/av-dockerhub-sample:latest #path to your docker image Ex. Docker hub path or Github container registry path or local path where image exist.
         ports:
-        - containerPort: 3000
+        - containerPort: 3000 # You can give any port
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: node-app-service
+  name: node-app-service  # You can give any name
 spec:
   selector:
-    app: node-simple
+    app: node-simple  # You can give any name
   type: LoadBalancer
   ports:
   - protocol: TCP
