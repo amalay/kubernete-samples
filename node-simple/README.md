@@ -102,7 +102,7 @@ spec:
         ports:
         - containerPort: 3000 # You can give any port
       imagePullSecrets:
-        - name: <b>mydockerhubsecretkey</b> # Secret key to access private docker hub image
+        - name: mydockerhubsecretkey # Secret key to access private docker hub image
 ---
 apiVersion: v1
 kind: Service
