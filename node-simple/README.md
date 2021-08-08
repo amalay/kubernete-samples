@@ -33,7 +33,10 @@ Once docker image is created successfully, you can see it in your Docker Desktop
 
 ### Publish your docker image to your Docker hub
 Before publishing your docker image to your Docker hub, you have to login to docker hub by executing below command:
+
+```
 > docker login
+```
 
 After successfull login to Docker hub, you can execute the below command to push your image to your Docker hub:
 ```
@@ -57,7 +60,9 @@ Before deploying your docker image to Kubernete cluster, you have create secret 
 5. `<YOUR DOCKER HUB EMAIL>`: Your docker hub email id.
 
 Example:
+```
 > kubectl create secret docker-registry mydockerhubsecretkey --docker-server=https://index.docker.io/v2/ --docker-username=xxxxx --docker-password=849x19xx-4757-42xx-x710-47x8x37xxx7a --docker-email=xxxx@xxxxx.com
+```
 
 Once secret key is created, you can see it by executing below command:
 
@@ -234,7 +239,7 @@ node-app-deployment-76758f6b-hppgz   1/1     Running   0          49m
 ```
 
 ```
-> "kubectl logs `<POD NAME>`"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
+> "kubectl logs <POD NAME>"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
 ```
 
 Output:
