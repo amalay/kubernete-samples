@@ -24,7 +24,7 @@ You can below command on any terminal to build docker image.
 
 OR
 
-> "docker build -t <DOCKER HUB ACCOUNT ID>/<REPO NAME>:<TAG NAME> ."	Ex: "docker build -t amalayverma/avimg-kubernete-node-simple[:latest] ."
+> "docker build -t `<DOCKER HUB ACCOUNT ID>`/`<REPO NAME>`:`<TAG NAME>` ."	Ex: "docker build -t amalayverma/avimg-kubernete-node-simple[:latest] ."
 
 Once docker image is created successfully, you can see it in your Docker Desktop.
 
