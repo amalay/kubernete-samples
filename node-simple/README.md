@@ -20,7 +20,7 @@ Required packages and commands to install
 
 ### Create docker image of your app
 You can below command on any terminal to build docker image.
-> "docker build -t {IMAGE NAME} ." Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
+> "docker build -t `<IMAGE NAME>` ." Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
 
 OR
 
@@ -33,7 +33,7 @@ Before publishing your docker image to your Docker hub, you have to login to doc
 > docker login
 
 After successfull login to Docker hub, you can execute the below command to push your image to your Docker hub:
-> "docker push <DOCKER HUB ACCOUNT ID>/<YOUR IMAGE NAME>:<TAG NAME>"    Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
+> "docker push `<DOCKER HUB ACCOUNT ID>`/`<YOUR IMAGE NAME>`:`<TAG NAME>`"    Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
 
 After successfull execution of this command, you can see your image into your Docker hub under Repositories section. You can also see it in your Docker Desktop under Remote Repositories section as below:
 
@@ -41,13 +41,13 @@ After successfull execution of this command, you can see your image into your Do
 ### Deploy your docker image to Kubernete cluster
 Before deploying your docker image to Kubernete cluster, you have create secret key to access your Docker hub then you can use this secret key to deploy your docker image to kubernete as below:
 
-> kubectl create secret docker-registry <SECRET NAME> --docker-server=<YOUR REGISTRY SERVER> --docker-username=<YOUR DOCKER HUB ID> --docker-password=<YOUR DOCKER HUB PASSWORD> --docker-email=<YOUR DOCKER HUB EMAIL>
+> kubectl create secret docker-registry `<SECRET NAME>` --docker-server = `<YOUR REGISTRY SERVER>` --docker-username = `<YOUR DOCKER HUB ID>` --docker-password = `<YOUR DOCKER HUB PASSWORD>` --docker-email = `<YOUR DOCKER HUB EMAIL>`
 
-<SECRET NAME>: You can give any name.
-<YOUR REGISTRY SERVER>: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
-<YOUR DOCKER HUB ID>: Your docker hub id/username.
-<YOUR DOCKER HUB PASSWORD>: Your docker hub password. But if 2FA enabled on your then you have to create Personal Access Token (PAT) and use it as a password here.
-<YOUR DOCKER HUB EMAIL>: Your docker hub email id.
+`<SECRET NAME>`: You can give any name.
+`<YOUR REGISTRY SERVER>`: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
+`<YOUR DOCKER HUB ID>`: Your docker hub id/username.
+`<YOUR DOCKER HUB PASSWORD>`: Your docker hub password. But if 2FA enabled on your then you have to create Personal Access Token (PAT) and use it as a password here.
+`<YOUR DOCKER HUB EMAIL>`: Your docker hub email id.
 
 Example:
 > kubectl create secret docker-registry mydockerhubsecretkey --docker-server=https://index.docker.io/v2/ --docker-username=xxxxx --docker-password=849x19xx-4757-42xx-x710-47x8x37xxx7a --docker-email=xxxx@xxxxx.com
@@ -218,7 +218,7 @@ NAME                                 READY   STATUS    RESTARTS   AGE
 node-app-deployment-76758f6b-hppgz   1/1     Running   0          49m
 ```
 
-> "kubectl logs <POD NAME>"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
+> "kubectl logs `<POD NAME>`"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
 
 Output:
 
