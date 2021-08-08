@@ -71,7 +71,7 @@ metadata:
 type: kubernetes.io/dockerconfigjson
 ```
 
-Now you can use this secret key (mydockerhubsecretkey) in your deployment.yaml file as below:
+Now you can use this secret key (mydockerhubsecretkey) in your <b>deployment.yaml</b> file as below:
 
 ``` json
 # We can define "app deployment" and "service deployment" scripts in two seperate files (Ex. "deployment-app.yaml" and "deployment-service.yaml") or
@@ -102,7 +102,7 @@ spec:
         ports:
         - containerPort: 3000 # You can give any port
       imagePullSecrets:
-        - name: mydockerhubsecretkey # Secret key to access private docker hub image
+        - name: <b>mydockerhubsecretkey</b> # Secret key to access private docker hub image
 ---
 apiVersion: v1
 kind: Service
