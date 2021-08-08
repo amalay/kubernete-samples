@@ -18,10 +18,15 @@ spec:
         app: node-simple  # You can give any name
     spec:
       containers:
-      - name: avcon-kubernete-node-simple # You can give any name
-        image: ghcr.io/amalay/av-dockerhub-sample:latest #path to your docker image Ex. Docker hub path or Github container registry path or local path where image exist.
+      - name: avcon-kubernete-node-simple # You can give any name. 
+        # Set docker image path (Ex. Docker hub path or Github container registry path or local path) where image exist.
+        image: amalayverma/avimg-kubernete-node-simple:latest # Point to Docker hub image
+        # image: ghcr.io/amalay/av-dockerhub-sample:latest # Point to Github container registry.
+        # image: avimg-kubernete-node-simple # Point to local docker desktop image        
         ports:
         - containerPort: 3000 # You can give any port
+      imagePullSecrets:
+        - name: mydockerhubsecretkey # Secret key to access private docker hub image
 ---
 apiVersion: v1
 kind: Service
