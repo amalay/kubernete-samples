@@ -43,11 +43,11 @@ Before deploying your docker image to Kubernete cluster, you have create secret 
 
 > kubectl create secret docker-registry `<SECRET NAME>` --docker-server = `<YOUR REGISTRY SERVER>` --docker-username = `<YOUR DOCKER HUB ID>` --docker-password = `<YOUR DOCKER HUB PASSWORD>` --docker-email = `<YOUR DOCKER HUB EMAIL>`
 
-`<SECRET NAME>`: You can give any name.
-`<YOUR REGISTRY SERVER>`: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
-`<YOUR DOCKER HUB ID>`: Your docker hub id/username.
-`<YOUR DOCKER HUB PASSWORD>`: Your docker hub password. But if 2FA enabled on your then you have to create Personal Access Token (PAT) and use it as a password here.
-`<YOUR DOCKER HUB EMAIL>`: Your docker hub email id.
+1. `<SECRET NAME>`: You can give any name.
+2. `<YOUR REGISTRY SERVER>`: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
+3. `<YOUR DOCKER HUB ID>`: Your docker hub id/username.
+4. `<YOUR DOCKER HUB PASSWORD>`: Your docker hub password. But if 2FA enabled on your then you have to create Personal Access Token (PAT) and use it as a password here.
+5. `<YOUR DOCKER HUB EMAIL>`: Your docker hub email id.
 
 Example:
 > kubectl create secret docker-registry mydockerhubsecretkey --docker-server=https://index.docker.io/v2/ --docker-username=xxxxx --docker-password=849x19xx-4757-42xx-x710-47x8x37xxx7a --docker-email=xxxx@xxxxx.com
