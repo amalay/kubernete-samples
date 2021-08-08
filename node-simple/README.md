@@ -36,7 +36,9 @@ Before publishing your docker image to your Docker hub, you have to login to doc
 > docker login
 
 After successfull login to Docker hub, you can execute the below command to push your image to your Docker hub:
-> "docker push `<DOCKER HUB ACCOUNT ID>`/`<YOUR IMAGE NAME>`:`<TAG NAME>`"    Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
+```
+> "docker push <DOCKER HUB ACCOUNT ID>/<YOUR IMAGE NAME>:<TAG NAME>"    Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
+```
 
 After successfull execution of this command, you can see your image into your Docker hub under Repositories section. You can also see it in your Docker Desktop under Remote Repositories section as below:
 
@@ -44,7 +46,9 @@ After successfull execution of this command, you can see your image into your Do
 ### Deploy your docker image to Kubernete cluster
 Before deploying your docker image to Kubernete cluster, you have create secret key to access your Docker hub then you can use this secret key to deploy your docker image to kubernete as below:
 
-> kubectl create secret docker-registry `<SECRET NAME>` --docker-server = `<YOUR REGISTRY SERVER>` --docker-username = `<YOUR DOCKER HUB ID>` --docker-password = `<YOUR DOCKER HUB PASSWORD>` --docker-email = `<YOUR DOCKER HUB EMAIL>`
+```
+> kubectl create secret docker-registry <SECRET NAME> --docker-server = <YOUR REGISTRY SERVER> --docker-username = <YOUR DOCKER HUB ID> --docker-password = <YOUR DOCKER HUB PASSWORD> --docker-email = <YOUR DOCKER HUB EMAIL>
+```
 
 1. `<SECRET NAME>`: You can give any name.
 2. `<YOUR REGISTRY SERVER>`: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
@@ -126,7 +130,9 @@ spec:
 
 To deploy your image onto Kubernete, you have to execute below command:
 
+```
 > "kubectl create -f deployment.yaml --save-config" OR "kubectl apply -f deployment.yaml"
+```
 
 Output
 ``` json
@@ -136,7 +142,9 @@ service/node-app-service created
 
 After successfull execution of this command you can execute below command to check it:
 
+```
 > "kubectl get deployments."
+```
 
 Output:
 
@@ -145,7 +153,9 @@ NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 node-app-deployment   1/1     1            1           48m
 ```
 
+```
 > "kubectl get pods"
+```
 
 Output:
 ``` json
@@ -155,7 +165,9 @@ node-app-deployment-76758f6b-hppgz   0/1     ContainerCreating   0          5s
 
 To see in more detail, you can execute below command:
 
+```
 > "kubectl describe pod node-app-deployment-76758f6b-hppgz"
+```
 
 Output:
 ``` json
@@ -221,7 +233,9 @@ NAME                                 READY   STATUS    RESTARTS   AGE
 node-app-deployment-76758f6b-hppgz   1/1     Running   0          49m
 ```
 
+```
 > "kubectl logs `<POD NAME>`"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
+```
 
 Output:
 
@@ -231,7 +245,9 @@ Server is listening on port 3000
 
 To see the services, you can execute the below command:
 
+```
 > "kubectl get service"
+```
 
 Output:
 ``` json
@@ -245,7 +261,9 @@ Now to test this application, you can open the browser and navigate to http://lo
 
 Finally you can destroy the service by running the below command:
 
+```
 > "kubectl delete -f deployment.yaml"
+```
 
 Output:
 
