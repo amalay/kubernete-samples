@@ -68,8 +68,9 @@ Example:
 ```
 
 Once secret key is created, you can see it by executing below command:
-
+```
 > kubectl get secret mydockerhubsecretkey --output=yaml
+```
 
 Output:
 ``` json
@@ -233,7 +234,9 @@ Events:
   Normal  Started    21s   kubelet            Started container avcon-kubernete-node-simple
 ```
 
+```
 > "kubectl get pod --watch"
+```
 
 Output:
 ``` json
