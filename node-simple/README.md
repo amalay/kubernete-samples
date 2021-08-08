@@ -21,12 +21,14 @@ Required packages and commands to install
 ### Create docker image of your app
 You can execute below command on any terminal to build docker image.
 ``` 
-> "docker build -t <IMAGE NAME> ." Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
+> "docker build -t <IMAGE NAME> ."
+Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
 ```
 
 OR
 ```
-> "docker build -t <DOCKER HUB ACCOUNT ID>/<REPO NAME>:<TAG NAME> ."	Ex: "docker build -t amalayverma/avimg-kubernete-node-simple[:latest] ."
+> "docker build -t <DOCKER HUB ACCOUNT ID>/<REPO NAME>:<TAG NAME> ."
+Ex: "docker build -t amalayverma/avimg-kubernete-node-simple[:latest] ."
 ```
 
 Once docker image is created successfully, you can see it in your Docker Desktop.
@@ -40,7 +42,8 @@ Before publishing your docker image to your Docker hub, you have to login to doc
 
 After successfull login to Docker hub, you can execute the below command to push your image to your Docker hub:
 ```
-> "docker push <DOCKER HUB ACCOUNT ID>/<YOUR IMAGE NAME>:<TAG NAME>"    Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
+> "docker push <DOCKER HUB ACCOUNT ID>/<YOUR IMAGE NAME>:<TAG NAME>"
+Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
 ```
 
 After successfull execution of this command, you can see your image into your Docker hub under Repositories section. You can also see it in your Docker Desktop under Remote Repositories section as below:
