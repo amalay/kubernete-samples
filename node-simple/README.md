@@ -20,7 +20,7 @@ Required packages and commands to install
 
 ### Create docker image of your app
 You can below command on any terminal to build docker image.
-> "docker build -t <IMAGE NAME> ." Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
+> "docker build -t {IMAGE NAME} ." Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
 
 OR
 
