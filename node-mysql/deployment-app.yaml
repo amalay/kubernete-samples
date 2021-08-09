@@ -18,15 +18,12 @@ spec:
         app: node-mysql  # You can give any name
     spec:
       containers:
-      - name: avcon-kubernete-node-mysql # You can give any name. 
-        # Set docker image path (Ex. Docker hub path or Github container registry path or local path) where image exist.
-        image: amalayverma/avimg-kubernete-node-mysql:latest # Point to Docker hub image
-        # image: ghcr.io/amalay/av-dockerhub-mysql:latest # Point to Github container registry.
-        # image: avimg-kubernete-node-mysql # Point to local docker desktop image        
+      - name: avcon-kubernete-node-mysql # You can give any name.        
+        image: amalayverma/avimg-kubernete-node-mysql:latest 
         ports:
         - containerPort: 5000 # You can give any port
       imagePullSecrets:
-        - name: mydockerhubsecretkey # Secret key to access private docker hub image
+        - name: mydockerhubsecretkey # Secret key to access private docker hub image. It is not needed in case of public image.
 ---
 apiVersion: v1
 kind: Service
