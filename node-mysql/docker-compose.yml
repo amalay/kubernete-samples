@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: avcon-kubernete-node-mysql     
+    image: avimg-kubernete-node-mysql       
+    restart: always
+    build: 
+      context: .
+    env_file: ./.env
+    command: npm start
+    volumes: 
+      - node:/app/
+      - nodepackages:/app/node_modules
+    ports:
+      - $NODE_LOCAL_PORT:$NODE_DOCKER_PORT
+    depends_on: 
+        - mysqldb
+    environment: 
+        MYSQL_HOST: mysqldb
+  
+  mysqldb:
+    container_name: avcon-mysql
+    image: mysql:latest    
+    restart: always
+    env_file: ./.env
+    environment: 
+      MYSQL_ROOT_PASSWORD: $MYSQL_ROOT_PASSWORD
+      MYSQL_DATABASE: $MYSQL_DATABASE
+    ports:
+      - $MYSQL_LOCAL_PORT:$MYSQL_DOCKER_PORT
+    volumes:
+      - db:/var/lib/mysql
+      - dbconfig:/etc/mysql
+              
+volumes:
+    node:
+    nodepackages:
+    db:
+    dbconfig:

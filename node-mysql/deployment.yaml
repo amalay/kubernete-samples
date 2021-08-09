@@ -1,0 +1,43 @@
+# We can define "app deployment" and "service deployment" scripts in two seperate files (Ex. "deployment-app.yaml" and "deployment-service.yaml") or
+# We can also merge both scripts in single file (Ex. "deployment.yaml") as below:
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-app-deployment # You can give any name.
+  labels:
+    app: node-mysql  # You can give any name
+spec:
+  replicas: 1 # How many instance do you want to replicate for this app on Kubernete cluster? Ex. 1 or 2 or 3 and so on.
+  selector:
+    matchLabels:
+      app: node-mysql  # You can give any name
+  template:
+    metadata:
+      labels:
+        app: node-mysql  # You can give any name
+    spec:
+      containers:
+      - name: avcon-kubernete-node-mysql # You can give any name. 
+        # Set docker image path (Ex. Docker hub path or Github container registry path or local path) where image exist.
+        image: amalayverma/avimg-kubernete-node-mysql:latest # Point to Docker hub image
+        # image: ghcr.io/amalay/av-dockerhub-mysql:latest # Point to Github container registry.
+        # image: avimg-kubernete-node-mysql # Point to local docker desktop image        
+        ports:
+        - containerPort: 5000 # You can give any port
+      imagePullSecrets:
+        - name: mydockerhubsecretkey # Secret key to access private docker hub image
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: node-app-service  # You can give any name
+spec:
+  selector:
+    app: node-mysql  # You can give any name
+  type: LoadBalancer
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000
+    nodePort: 31110
