@@ -19,21 +19,32 @@ Required packages and commands to install
 > npm install dotenv --save
 
 ### Create docker image of your app
-You can below command on any terminal to build docker image.
-> "docker build -t `<IMAGE NAME>` ." Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
+You can execute below command on any terminal to build docker image.
+``` 
+> "docker build -t <IMAGE NAME> ."
+Ex: "docker build -t avimg-kubernete-node-simple". It will take a default tag as latest automatically.
+```
 
 OR
-
-> "docker build -t `<DOCKER HUB ACCOUNT ID>`/`<REPO NAME>`:`<TAG NAME>` ."	Ex: "docker build -t amalayverma/avimg-kubernete-node-simple[:latest] ."
+```
+> "docker build -t <DOCKER HUB ACCOUNT ID>/<REPO NAME>:<TAG NAME> ."
+Ex: "docker build -t amalayverma/avimg-kubernete-node-simple[:latest] ."
+```
 
 Once docker image is created successfully, you can see it in your Docker Desktop.
 
 ### Publish your docker image to your Docker hub
 Before publishing your docker image to your Docker hub, you have to login to docker hub by executing below command:
+
+```
 > docker login
+```
 
 After successfull login to Docker hub, you can execute the below command to push your image to your Docker hub:
-> "docker push `<DOCKER HUB ACCOUNT ID>`/`<YOUR IMAGE NAME>`:`<TAG NAME>`"    Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
+```
+> "docker push <DOCKER HUB ACCOUNT ID>/<YOUR IMAGE NAME>:<TAG NAME>"
+Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
+```
 
 After successfull execution of this command, you can see your image into your Docker hub under Repositories section. You can also see it in your Docker Desktop under Remote Repositories section as below:
 
@@ -41,20 +52,25 @@ After successfull execution of this command, you can see your image into your Do
 ### Deploy your docker image to Kubernete cluster
 Before deploying your docker image to Kubernete cluster, you have create secret key to access your Docker hub then you can use this secret key to deploy your docker image to kubernete as below:
 
-> kubectl create secret docker-registry `<SECRET NAME>` --docker-server = `<YOUR REGISTRY SERVER>` --docker-username = `<YOUR DOCKER HUB ID>` --docker-password = `<YOUR DOCKER HUB PASSWORD>` --docker-email = `<YOUR DOCKER HUB EMAIL>`
+```
+> kubectl create secret docker-registry <SECRET NAME> --docker-server = <YOUR REGISTRY SERVER> --docker-username = <YOUR DOCKER HUB ID> --docker-password = <YOUR DOCKER HUB PASSWORD> --docker-email = <YOUR DOCKER HUB EMAIL>
+```
 
-`<SECRET NAME>`: You can give any name.
-`<YOUR REGISTRY SERVER>`: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
-`<YOUR DOCKER HUB ID>`: Your docker hub id/username.
-`<YOUR DOCKER HUB PASSWORD>`: Your docker hub password. But if 2FA enabled on your then you have to create Personal Access Token (PAT) and use it as a password here.
-`<YOUR DOCKER HUB EMAIL>`: Your docker hub email id.
+1. `<SECRET NAME>`: You can give any name.
+2. `<YOUR REGISTRY SERVER>`: It si your Private Docker Registry FQDN. You can use https://index.docker.io/v2/ for DockerHub.
+3. `<YOUR DOCKER HUB ID>`: Your docker hub id/username.
+4. `<YOUR DOCKER HUB PASSWORD>`: Your docker hub password. But if 2FA enabled on your then you have to create Personal Access Token (PAT) and use it as a password here.
+5. `<YOUR DOCKER HUB EMAIL>`: Your docker hub email id.
 
 Example:
+```
 > kubectl create secret docker-registry mydockerhubsecretkey --docker-server=https://index.docker.io/v2/ --docker-username=xxxxx --docker-password=849x19xx-4757-42xx-x710-47x8x37xxx7a --docker-email=xxxx@xxxxx.com
+```
 
 Once secret key is created, you can see it by executing below command:
-
+```
 > kubectl get secret mydockerhubsecretkey --output=yaml
+```
 
 Output:
 ``` json
@@ -71,7 +87,7 @@ metadata:
 type: kubernetes.io/dockerconfigjson
 ```
 
-Now you can use this secret key (mydockerhubsecretkey) in your deployment.yaml file as below:
+Now you can use this secret key (mydockerhubsecretkey) in your <b>deployment.yaml</b> file as below:
 
 ``` json
 # We can define "app deployment" and "service deployment" scripts in two seperate files (Ex. "deployment-app.yaml" and "deployment-service.yaml") or
@@ -123,7 +139,9 @@ spec:
 
 To deploy your image onto Kubernete, you have to execute below command:
 
+```
 > "kubectl create -f deployment.yaml --save-config" OR "kubectl apply -f deployment.yaml"
+```
 
 Output
 ``` json
@@ -133,7 +151,9 @@ service/node-app-service created
 
 After successfull execution of this command you can execute below command to check it:
 
+```
 > "kubectl get deployments."
+```
 
 Output:
 
@@ -142,7 +162,9 @@ NAME                  READY   UP-TO-DATE   AVAILABLE   AGE
 node-app-deployment   1/1     1            1           48m
 ```
 
+```
 > "kubectl get pods"
+```
 
 Output:
 ``` json
@@ -152,7 +174,9 @@ node-app-deployment-76758f6b-hppgz   0/1     ContainerCreating   0          5s
 
 To see in more detail, you can execute below command:
 
+```
 > "kubectl describe pod node-app-deployment-76758f6b-hppgz"
+```
 
 Output:
 ``` json
@@ -210,7 +234,9 @@ Events:
   Normal  Started    21s   kubelet            Started container avcon-kubernete-node-simple
 ```
 
+```
 > "kubectl get pod --watch"
+```
 
 Output:
 ``` json
@@ -218,7 +244,9 @@ NAME                                 READY   STATUS    RESTARTS   AGE
 node-app-deployment-76758f6b-hppgz   1/1     Running   0          49m
 ```
 
-> "kubectl logs `<POD NAME>`"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
+```
+> "kubectl logs <POD NAME>"     Ex: "kubectl logs node-app-deployment-76758f6b-hppgz"
+```
 
 Output:
 
@@ -228,7 +256,9 @@ Server is listening on port 3000
 
 To see the services, you can execute the below command:
 
+```
 > "kubectl get service"
+```
 
 Output:
 ``` json
@@ -242,7 +272,9 @@ Now to test this application, you can open the browser and navigate to http://lo
 
 Finally you can destroy the service by running the below command:
 
+```
 > "kubectl delete -f deployment.yaml"
+```
 
 Output:
 
