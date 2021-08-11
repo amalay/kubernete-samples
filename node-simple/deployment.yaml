@@ -20,7 +20,8 @@ spec:
       containers:
       - name: avcon-kubernete-node-simple # You can give any name. 
         # Set docker image path (Ex. Docker hub path or Github container registry path or local path) where image exist.
-        image: amalayverma/avimg-kubernete-node-simple:latest # Point to Docker hub image
+        image: aveacr.azurecr.io/avimg-kubernete-node-simple:latest # Point to ACR
+        # image: amalayverma/avimg-kubernete-node-simple:latest # Point to Docker hub image
         # image: ghcr.io/amalay/av-dockerhub-sample:latest # Point to Github container registry.
         # image: avimg-kubernete-node-simple # Point to local docker desktop image        
         ports:
