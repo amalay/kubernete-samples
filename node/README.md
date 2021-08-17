@@ -16,12 +16,20 @@ It will aks you to select your azure subscription which you want to use for it. 
 
 ![image](https://user-images.githubusercontent.com/84455469/129727088-41edc381-e4fb-4f0d-90ac-d01f3eee8527.png)
 
+It will do some processing in the backend and create an Enviornment, Service Connection for Container Registry and Service Connection for Kubernete Service as below:
+
+##### Enviornment
+![image](https://user-images.githubusercontent.com/84455469/129727885-5d02b41a-87a1-415a-8cb7-a233c701a109.png)
+
+##### Service Connections
+![image](https://user-images.githubusercontent.com/84455469/129728416-83952a5e-0255-48d4-8d70-a327d261fa75.png)
+
+Once processing is done, it will show you YAML code in "azure-pipelines.yml" and ask you to Save it or Save and Run it as below:
+
 ![image](https://user-images.githubusercontent.com/84455469/129727540-cd077768-bd9c-42d3-ac71-6d20e79ec2f4.png)
 
-Save OR Save and Run
+If you click on Save or Save and Run button, it will present below screen to checked-in comments and branch. After that it will be saved or saved and run based on your selection as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/129728809-fe3a68d5-9bff-4b7b-b898-34147344197a.png)
 
-![image](https://user-images.githubusercontent.com/84455469/129727885-5d02b41a-87a1-415a-8cb7-a233c701a109.png)
 
-![image](https://user-images.githubusercontent.com/84455469/129728416-83952a5e-0255-48d4-8d70-a327d261fa75.png)
