@@ -16,13 +16,18 @@ It will aks you to select your azure subscription which you want to use for it. 
 
 ![image](https://user-images.githubusercontent.com/84455469/129727088-41edc381-e4fb-4f0d-90ac-d01f3eee8527.png)
 
-It will do some processing in the backend and create an Enviornment, Service Connection for Container Registry and Service Connection for Kubernete Service as below:
+It will do some processing in the backend and create an Enviornment, Service Connection for Container Registry and Service Connection for Kubernete Service and couple of yaml files as below:
 
 ##### Enviornment
 ![image](https://user-images.githubusercontent.com/84455469/129727885-5d02b41a-87a1-415a-8cb7-a233c701a109.png)
 
 ##### Service Connections
 ![image](https://user-images.githubusercontent.com/84455469/129728416-83952a5e-0255-48d4-8d70-a327d261fa75.png)
+
+##### YAML Files
+1. azure-pipeline.yml
+2. deployment.yml
+3. service.yml
 
 Once processing is done, it will show you YAML code in "azure-pipelines.yml" and ask you to Save it or Save and Run it as below:
 
@@ -41,4 +46,8 @@ Ex. MyContainerServiceConnection, MyKuberneteServiceConnection
 After renaming, you have to update this name in the azure-pipeline.yml file as well. You can also give value of imagePullSecret as per your choice as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/129732452-46b42d74-4a61-4a50-b7b6-63e1b8629cb1.png)
+
+Once you run your build and release pipeline successfully, you will see the below screen:
+
+![image](https://user-images.githubusercontent.com/84455469/129733843-eecea4ca-efdf-4f50-85cb-64ef96601a86.png)
 
