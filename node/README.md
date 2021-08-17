@@ -13,6 +13,10 @@ Lets say you have already checked-in your project in Azure DevOps as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/129727540-cd077768-bd9c-42d3-ac71-6d20e79ec2f4.png)
 
+Save OR Save and Run
+
+![image](https://user-images.githubusercontent.com/84455469/129728809-fe3a68d5-9bff-4b7b-b898-34147344197a.png)
+
 ![image](https://user-images.githubusercontent.com/84455469/129727885-5d02b41a-87a1-415a-8cb7-a233c701a109.png)
 
 ![image](https://user-images.githubusercontent.com/84455469/129728416-83952a5e-0255-48d4-8d70-a327d261fa75.png)
