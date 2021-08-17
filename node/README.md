@@ -1,4 +1,4 @@
-# Simple NodeJS App With Kubernete
+# Configure CI/CD pipelines with Azure DevOps
 
 ## Learning Steps
 
