@@ -49,7 +49,7 @@ Ex: "docker push amalayverma/avimg-kubernete-node-simple:latest"
 After successfull execution of this command, you can see your image into your Docker hub under Repositories section. You can also see it in your Docker Desktop under Remote Repositories section as below:
 
 
-### Deploy your docker image to Kubernete cluster
+### Deploy your docker image to Local Kubernete cluster
 Before deploying your docker image to Kubernete cluster, you have create secret key to access your Docker hub then you can use this secret key to deploy your docker image to kubernete as below:
 
 ```
