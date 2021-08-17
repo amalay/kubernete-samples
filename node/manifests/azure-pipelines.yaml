@@ -11,12 +11,12 @@ resources:
 variables:
 
   # Container registry service connection established during pipeline creation
-  dockerRegistryServiceConnection: 'BITCDEMO-AVEACR-ServiceConnection'
+  dockerRegistryServiceConnection: 'AVEACR-ServiceConnection'
   imageRepository: 'avenode'
-  containerRegistry: 'aveacr.azurecr.io'
+  containerRegistry: 'myacr.azurecr.io'
   dockerfilePath: '**/Dockerfile'
   tag: '$(Build.BuildId)'
-  imagePullSecret: 'avedockerauth'
+  imagePullSecret: 'mydockerauthkey'
 
   # Agent VM image name
   vmImageName: 'ubuntu-latest'
