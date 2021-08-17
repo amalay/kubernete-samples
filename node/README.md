@@ -4,10 +4,15 @@ Lets say you have already checked-in your project in Azure DevOps as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/129723328-a9171504-ffc7-449b-82fd-4a9ecb78c256.png)
 
+Go to pipelines and click on new pipeline and select Azure Repos Git as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/129724534-666e73d1-c82e-405d-ba84-8951a1cc6eb2.png)
 
+Select your repository and then select Deploy to Azure Kubernet Service as below:
+
 ![image](https://user-images.githubusercontent.com/84455469/129724945-679bffb1-0ad4-4f35-ae9b-aa347c6718fe.png)
+
+It will aks you to select your azure subscription which you want to use for it. Then you have to select cluster, namespace, container registry. After that you enter image name and port number as per your choice. Finally click on Validate and Configure button as below:
 
 ![image](https://user-images.githubusercontent.com/84455469/129727088-41edc381-e4fb-4f0d-90ac-d01f3eee8527.png)
 
