@@ -51,3 +51,11 @@ Once you run your build and release pipeline successfully, you will see the belo
 
 ![image](https://user-images.githubusercontent.com/84455469/129733843-eecea4ca-efdf-4f50-85cb-64ef96601a86.png)
 
+To test your application wheter it is deployed successfully or not? you have to go to Azure portal and select your Resource group then select the Kubernete Service then select Service and ingresses. You will below screen:
+
+![image](https://user-images.githubusercontent.com/84455469/129735538-974af321-5301-41d2-894d-de5c013dbbe0.png)
+
+You can see your application and it external IP and port number. You can open the browser and enter the address as http://21.52.154.168:3000/ and hit the enter button. You will see the page as below:
+
+![image](https://user-images.githubusercontent.com/84455469/129736288-8ebb0a84-2592-4417-901e-923e44806add.png)
+
