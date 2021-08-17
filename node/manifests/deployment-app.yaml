@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: avenode
+  labels:
+    app: avenode
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: avenode
+  template:
+    metadata:
+      labels:
+        app: avenode
+    spec:
+      containers:
+      - name: avenode
+        image: aveacr.azurecr.io/avenode:latest
+        ports:
+        - containerPort: 3000
