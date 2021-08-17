@@ -32,4 +32,13 @@ If you click on Save or Save and Run button, it will present below screen to che
 
 ![image](https://user-images.githubusercontent.com/84455469/129728809-fe3a68d5-9bff-4b7b-b898-34147344197a.png)
 
+I have saved all the .ymls file in one folder call manifests in the project.
+
+While creating the service connections, it take the name automatically but if you want to give your name according to your choice then you can edit both service connection and rename it.
+
+Ex. MyContainerServiceConnection, MyKuberneteServiceConnection
+
+After renaming, you have to update this name in the azure-pipeline.yml file as well. You can also give value of imagePullSecret as per your choice as below:
+
+![image](https://user-images.githubusercontent.com/84455469/129732452-46b42d74-4a61-4a50-b7b6-63e1b8629cb1.png)
 
