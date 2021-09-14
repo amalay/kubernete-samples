@@ -5,7 +5,7 @@ VM is a kind of a virtual server that you can connect remotely. VM containes who
 
 To run an application web/window, you need a machine either (virtual or physical). Let say you have developed one application using React.JS and MySql. That means to run this application, you need a machine which must have Operating Systems (OS), React.JS environment and MySql Database or Service. To deploy this application, you need to setup a VM with these dependencies. After deploying this application on a VM, let say it is serving your purpose for the moment. 
 
-In future, if user/demand increase/decrease then definetely you need to scale or de-scale your infrastructure. In case of scale/de-scale or update your app with new version and so on are the very expensive, complex and time consuming task. Its complexity increase more when more than one applications share the common resources. And because of that, all other applications will also be down while upgrading one application. This problem is called as Dependency hell problem and to solve this problem, conatiner come into the picture.
+In future, if user/demand increase/decrease then definetely you need to scale or de-scale your infrastructure. In case of scale/de-scale or update your app with new version and so on are the very expensive, complex and time consuming task. Its complexity increase more when more than one applications share the common resources. And because of that, all other applications will also be down while upgrading one application. This problem is called as Dependency hell problem and to solve this problem, container come into the picture.
   
 #### Container: 
 A container is the next level of abstraction after virtual machines, in which each component of the whole application is individually packaged into a standalone unit. And each of these unit is called a container.
@@ -14,13 +14,13 @@ Containers only contains the required resources not all the resources unnecessar
 
 So for our application, Operating Systems (Windows/Linux/Mac) is one unit (container). React.JS environment and its depedent libraries are second unit (container). MySQL platform and the database are third unit(container).
 
-One important point here is, each container may depend on another conatiner. Example - MySQL conatiner depends on OS conatiner and so on. This concept is called stacked conatiners. Means each conatiner depends on their below container. Microservices also works on the same concept. 
+One important point here is, each container may depend on another container. Example - MySQL container depends on OS container and so on. This concept is called stacked containers. Means each container depends on their below container. Microservices also works on the same concept. 
   
 #### Docker: 
-Docker is the most widely used platform to create and manage applications via conatiners.
+Docker is the most widely used platform to create and manage applications via containers.
 
 #### Kubernete: 
-Lets go back to the dependency hell problem once again, There we understand that container is the good option to scale/de-scale the application based on the demand. Number of users increase to access our application and to serve those request frequently, we can increase the number of conatiners and then employ the one or more load balancer. This is great and solve the purpose very well but only up to a certain limit. 
+Lets go back to the dependency hell problem once again, There we understand that container is the good option to scale/de-scale the application based on the demand. Number of users increase to access our application and to serve those request frequently, we can increase the number of containers and then employ the one or more load balancer. This is great and solve the purpose very well but only up to a certain limit. 
 
 Lets say number of users are keep increasing from hundreds to thousands to millions then we need dozens or hundreds of load-balancers, which is another headache in itself. To perform any update in the app will need a lot of effort to configure each load balancer. 
 
@@ -69,4 +69,3 @@ We can use Docker container directly for our purpose but we instead of using it 
 #### Note
 Keep in mind that nodes are "physically" exist which means that our cloud platform must allow the Kubernetes engine to create new machines.
 
-Test
